@@ -1,0 +1,38 @@
+<!-- Responsive panel example-->
+
+<div class="row">
+  <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Product At Store #<%= @product_at_store.id %></h3>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-12">
+            <dl class="dl-horizontal">
+              <dt>Product</dt>
+              <dd><%= @product_at_store.product_id %></dd>
+
+              <dt>Store</dt>
+              <dd><%= @product_at_store.store_id %></dd>
+
+            </dl>
+            <div class="btn-group btn-group-justified">
+              <%= link_to product_at_stores_url, :class => "btn btn-primary" do %>
+                <i class="fa fa-chevron-left"></i>
+              <% end %>
+              <%= link_to edit_product_at_store_url(@product_at_store.id), :class => "btn btn-warning" do %>
+                <i class="fa fa-edit"></i>
+              <% end %>
+              <%= link_to product_at_store_url(@product_at_store.id), :method => "delete", :data => { :confirm => "Do you really want to delete this product_at_store?" }, :class => "btn btn-danger" do %>
+                <i class="fa fa-trash-o"></i>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- End responsive panel example -->
