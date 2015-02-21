@@ -1,6 +1,5 @@
 User.destroy_all
 User.create!([
-  {name: "", email:""}
   ])
 
 Product.destroy_all
