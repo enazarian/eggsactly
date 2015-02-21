@@ -1,9 +1,13 @@
+<style type="text/css">
+  #map {
+    height: 700px;
+    border: 1px solid #000;
+  }
+</style>
+
 <div class="page-header">
   <h1>
-    Product at stores
-    <%= link_to new_product_at_store_url, :class => "btn btn-lg btn-success" do %>
-      <i class="fa fa-plus"></i>
-    <% end  %>
+    Local artisanal foodstuffs
   </h1>
 </div>
 
@@ -11,26 +15,58 @@
 
 <div class="row">
   <div class="col-xs-12">
-    <input type="text" id="quicksearch" placeholder="Search Product at stores (start typing)" class="form-control">
+   <div id="map">
+    <!-- placeholder for the google map -->
+   </div>
+
+
+   <ul style="display:none">
+     <% @stores.each do |store| %>
+       <li id="store-<%= store.id%>">
+         <h4><%= link_to store.name, store %></h4>
+         phone
+         website
+         ....
+       </li>
+     <% end %>
+   </ul>
+
   </div>
 </div>
 
 <hr>
 
-<%= form_tag products_at_store_path, method: "get" do %>
-  <ul>
-    <% @products.each_with_index do |p, index| %>
-      <li>
-        <label>
-          <%= check_box_tag "groceries[]", index %>
-          <%= p %>
-        </label>
-      </li>
-    <%end %>
-  </ul>
+<script type="text/javascript">
+  window.DataSet = <%= @stores.to_json.html_safe %>;
 
-  <%= submit_tag "FILTER" %>
-<% end %>
+  window.onload = function() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function (position) {
+        var currentPosition = new google.maps.LatLng(
+          position.coords.latitude,
+          position.coords.longitude
+        );
 
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: currentPosition,
+          zoom: 15,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
 
-<%= @filtered_things %>
+        var markers = [];
+
+        for (var i = 0; i < window.DataSet.length; i++) {
+          var place = window.DataSet[i];
+          var position = new google.maps.LatLng(place.latitude, place.longitude);
+          var marker = new google.maps.Marker({
+            position: position,
+            map: map,
+            draggable: false
+          });
+          markers.push({ marker: marker, place: place })
+        };
+
+      });
+    }
+  };
+</script>
