@@ -70,8 +70,6 @@
           mapTypeId: google.maps.MapTypeId.ROADMAP
         });
 
-        var markers = [];
-
         for (var i = 0; i < window.DataSet.length; i++) {
           var place = window.DataSet[i];
           var position = new google.maps.LatLng(place.latitude, place.longitude);
@@ -80,7 +78,17 @@
             map: map,
             draggable: false
           });
-          markers.push({ marker: marker, place: place })
+
+          (function(p, m){
+            google.maps.event.addListener(marker, "click", function() {
+
+              var infowindow = new google.maps.InfoWindow({
+                content: document.getElementById('store-' + p.id).innerHTML
+              });
+
+              infowindow.open(map,m);
+            });
+          })(place, marker);
         };
 
       });
