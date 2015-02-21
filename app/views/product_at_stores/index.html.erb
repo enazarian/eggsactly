@@ -17,83 +17,20 @@
 
 <hr>
 
-<div class="row isotope-container">
-<% @product_at_stores.each do |product_at_store| %>
-  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 isotope-item">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">Product At Store #<%= product_at_store.id %></h3>
-      </div>
-      <div class="panel-body">
-        <dl>
-          <dt>Product</dt>
-          <dd><%= product_at_store.product_id %></dd>
+<%= form_tag products_at_store_path, method: "get" do %>
+  <ul>
+    <% @products.each_with_index do |p, index| %>
+      <li>
+        <label>
+          <%= check_box_tag "groceries[]", index %>
+          <%= p %>
+        </label>
+      </li>
+    <%end %>
+  </ul>
 
-          <dt>Store</dt>
-          <dd><%= product_at_store.store_id %></dd>
-
-        </dl>
-        <div class="btn-group btn-group-justified">
-          <%= link_to product_at_store_url(product_at_store), :class => "btn btn-primary" do %>
-            <i class="fa fa-search-plus"></i>
-          <% end %>
-          <%= link_to edit_product_at_store_url(product_at_store), :class => "btn btn-warning" do %>
-            <i class="fa fa-edit"></i>
-          <% end %>
-          <%= link_to product_at_store_url(product_at_store), :method => "delete", :data => { :confirm => "Do you really want to delete this product_at_store?" }, :class => "btn btn-danger" do %>
-            <i class="fa fa-trash-o"></i>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
+  <%= submit_tag "FILTER" %>
 <% end %>
-</div>
 
-<!-- JavaScript for Isotope layout and quicksearch -->
-<!-- JavaScript for Isotope layout and quicksearch -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.pkgd.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.0.0/isotope.pkgd.min.js"></script>
-<script>
-  $(function() {
-    // quick search regex
-    var qsRegex;
 
-    // init Isotope
-    var $container = $('.isotope-container');
-
-    $container.imagesLoaded(function() {
-      $container.isotope({
-        itemSelector: '.isotope-item',
-        layoutMode: 'masonry',
-        filter: function() {
-          return qsRegex ? $(this).text().match( qsRegex ) : true;
-        }
-      })
-    });
-
-    // use value of search field to filter
-    var $quicksearch = $('#quicksearch').keyup( debounce( function() {
-      qsRegex = new RegExp( $quicksearch.val(), 'gi' );
-      $container.isotope();
-    }, 200 ) );
-
-  });
-
-  // debounce so filtering doesn't happen every millisecond
-  function debounce( fn, threshold ) {
-    var timeout;
-    return function debounced() {
-      if ( timeout ) {
-        clearTimeout( timeout );
-      }
-      function delayed() {
-        fn();
-        timeout = null;
-      }
-      timeout = setTimeout( delayed, threshold || 100 );
-    }
-  }
-</script>
-
-<!-- End responsive, Isotope-based layout example -->
+<%= @filtered_things %>
