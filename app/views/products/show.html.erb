@@ -4,13 +4,13 @@
     <div class="span2">
 
 <div class="list-group">
-<%= form_tag products_at_store_path, method: "get" do %>
+<%= form_tag products_path, method: "get" do %>
   <ul>
-    <% @products.each_with_index do |p, index| %>
+    <% @products.each do |product| %>
       <li>
-      <a href="<%= link_to p %>" class="list-group-item"><%= p %></a>
+      <a href="<%= link_to product %>" class="list-group-item"><%= product.name %></a>
       </li>
-    <%end %>
+    <% end %>
   </ul>
 </div>
 
