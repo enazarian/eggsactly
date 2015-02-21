@@ -1,0 +1,66 @@
+[
+  {
+    "name":"Gunthorp Farms",
+    "address":"",
+    "city":"La Grange",
+    "state":"IN",
+    "zip":"",
+    "website_url":"gunthorpfarms.com"
+  },
+  {
+    "name":"Triple S",
+    "address":"",
+    "city":"",
+    "state":"",
+    "zip":"",
+    "website_url":""
+  },
+  {
+    "name":"Slagel Family Farms",
+    "address":"",
+    "city":"Fairbury",
+    "state":"IL",
+    "zip":"",
+    "website_url":"http://www.slagelfamilyfarm.com/"
+  },
+  {
+    "name":"Heartland Meats",
+    "address":"",
+    "city":"Mendota",
+    "state":"IL",
+    "zip":"",
+    "website_url":"http://www.heartlandmeats.com/"
+  },
+  {
+    "name":"West Loop Salumi",
+    "address":"",
+    "city":"Chicago",
+    "state":"IL",
+    "zip":"",
+    "website_url":"http://www.westloopsalumi.com/"
+  },
+  {
+    "name":"Prairie Farms",
+    "address":"",
+    "city":"Champaign",
+    "state":"IL ",
+    "zip":"",
+    "website_url":"http://www.prairiefarms.com/"
+  },
+  {
+    "name":"Waseda Farms",
+    "address":"",
+    "city":"Door County",
+    "state":"WI",
+    "zip":"",
+    "website_url":"http://www.wasedafarms.com/"
+  },
+  {
+    "name":"Castle Rock Farms",
+    "address":"",
+    "city":"Osseo",
+    "state":"WI",
+    "zip":"",
+    "website_url":"http://castlerockfarms.net/index.php"
+  }
+]

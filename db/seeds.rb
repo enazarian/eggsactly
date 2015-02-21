@@ -23,3 +23,23 @@ table_hashes.each do |store_hash|
   s.save
 end
 puts "Success. You have loaded the Store Table with #{Store.count} rows."
+
+
+
+
+farms_file = Rails.root.join('lib', 'seeds', 'farms.json').to_s
+table_hashes = JSON.parse(open(farms_file).read)
+
+
+Source.destroy_all
+table_hashes.each do |source_hash|
+  so = Source.new
+  so.name = source_hash["name"]
+  so.address = source_hash["address"]
+  so.city = source_hash["city"]
+  so.state = source_hash["state"]
+  so.zip = source_hash["zip"]
+  so.website_url = source_hash["website_url"]
+  so.save
+end
+puts "Success. You have loaded the Source Table with #{Source.count} rows."
