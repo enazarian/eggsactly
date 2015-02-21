@@ -40,11 +40,16 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse navbar-inverse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="/products">Foodstuffs</a></li>
-        <li><a href="/sources">Local Producers</a></li>
-        <li><a href="/stores">Where to buy</a></li>
-
-      </ul>
+        <li><a href="/product_at_stores">The what and the where</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">More good stuff <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/products">Foodstuffs</a></li>
+            <li><a href="/sources">Local Producers</a></li>
+            <li><a href="/stores">Where to buy</a></li>
+          </ul>
+        </li>
+        </ul>
 
       <ul class="nav navbar-nav navbar-right">
         <% if current_user.present? %>

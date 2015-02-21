@@ -14,7 +14,24 @@
 <!-- Responsive, Isotope-based layout example -->
 
 <div class="row">
-  <div class="col-xs-12">
+<div class="col-xs-3">
+<div class="list-group">
+<%= form_tag products_at_store_path, method: "get" do %>
+  <ul>
+    <% @products.each_with_index do |p, index| %>
+      <li>
+      <a href="<%= link_to p %>" class="list-group-item"><%= p %></a>
+      </li>
+    <%end %>
+  </ul>
+
+  <%= submit_tag "FILTER" %>
+<% end %>
+</div>
+</div>
+
+<%= @filtered_things %>
+  <div class="col-xs-9">
    <div id="map">
     <!-- placeholder for the google map -->
    </div>
