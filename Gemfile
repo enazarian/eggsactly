@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'geocoder'
 
+gem 'seed_dump'
+
 gem 'devise'
 gem 'starter_generators', :git => "git://github.com/rbetina/starter_generators.git", :branch=> "panels"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
