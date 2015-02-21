@@ -1,0 +1,106 @@
+[
+  {
+    "name":"Butcher and Larder",
+    "address":"1026 N. Milwaukee Ave.",
+    "city":"Chicago",
+    "state":"IL",
+    "zip":60642,
+    "website_url":"http://thebutcherandlarder.com"
+  },
+  {
+    "name":"Publican Quality Meats",
+    "address":"825 W Fulton Market",
+    "city":"Chicago",
+    "state":"IL",
+    "zip":60607,
+    "website_url":"http://publicanqualitymeats.com"
+  },
+  {
+    "name":"Chop Shop",
+    "address":"2033 W North Ave.",
+    "city":"Chicago",
+    "state":"IL",
+    "zip":60647,
+    "website_url":"chopshopchi.com"
+  },
+  {
+    "name":"Gepperths",
+    "address":"1964 N Halsted",
+    "city":"Chicago",
+    "state":"IL",
+    "zip":60614,
+    "website_url":"http://gepperthsmarket.webs.com"
+  },
+  {
+    "name":"Foodease",
+    "address":"835 N. Michigan",
+    "city":"Chicago",
+    "state":"IL ",
+    "zip":60611,
+    "website_url":"foodeasechicago.com"
+  },
+  {
+    "name":"Plum Market",
+    "address":"1233 N. Wells",
+    "city":"Chicago",
+    "state":"IL",
+    "zip":60610,
+    "website_url":"plummarket.com"
+  },
+  {
+    "name":"Plenty on Division",
+    "address":"2036 W. Division",
+    "city":"Chicago",
+    "state":"IL",
+    "zip":60622,
+    "website_url":"www.plentygoodfood.com/"
+  },
+  {
+    "name":"Mrs Greens",
+    "address":"555 W. Webster",
+    "city":"Chicago",
+    "state":"IL",
+    "zip":60614,
+    "website_url":"mrsgreens.com"
+  },
+  {
+    "name":"Dill Pickle Co-op",
+    "address":"3039 W. Fullerton",
+    "city":"Chicago",
+    "state":"IL",
+    "zip":60647,
+    "website_url":"dillpickle.coop"
+  },
+  {
+    "name":"Binny’s South Loop",
+    "address":"1132 S. Jefferson St.",
+    "city":"Chicago",
+    "state":"IL",
+    "zip":60607,
+    "website_url":"http://www.binnys.com/location/Chicago_-_South_Loop"
+  },
+  {
+    "name":"Green Grocer Chicago",
+    "address":"1402 W. Grand Ave.",
+    "city":"Chicago",
+    "state":"IL",
+    "zip":60642,
+    "website_url":"http://www.greengrocerchicago.com/"
+  },
+  {
+    "name":"Eataly",
+    "address":"43 E. Ohio St.",
+    "city":"Chicago",
+    "state":"IL",
+    "zip":60611,
+    "website_url":"http://www.eataly.com/eataly-chicago/"
+  },
+  {
+    "name":"Olivias",
+    "address":"2014 W. Wabansia St",
+    "city":"Chicago",
+    "state":"IL",
+    "zip":60647,
+    "website_url":"http://www.oliviasmarket.com"
+  }
+]
