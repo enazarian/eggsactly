@@ -20,7 +20,9 @@
   <ul>
     <% @products.each_with_index do |p, index| %>
       <li>
-      <a href="<%= link_to p %>" class="list-group-item"><%= p %></a>
+      <input type=checkbox name="product[]" value=<%=p.id%> >
+      <%= link_to p.name, product_path(p.id), class: "list-group-item" %>
+
       </li>
     <%end %>
   </ul>

@@ -1,7 +1,8 @@
 class ProductAtStoresController < ApplicationController
   def index
-    @products = ["Eggs", "Milk", "Bread"] #Product.all
-    @product_at_stores = ProductAtStore.where(product_id: params[:groceries])
+    @products = Product.all
+
+    @product_at_stores = ProductAtStore.where(product_id: params[:products])
     @stores = Store.all
   end
 

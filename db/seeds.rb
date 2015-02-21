@@ -48,3 +48,25 @@ Store.create!([
   {name: "Olivias", address: "2014 W. Wabansia St", city: "Chicago", state: "IL", zip: 60647, website_url: "http://www.oliviasmarket.com", latitude: "41.9125185", longitude: "-87.6781172"}
 ])
 puts "You have #{Store.count} stores!"
+
+
+ProductAtStore.destroy_all
+ProductAtStoreFromSource.destroy_all
+ProductFromSource.destroy_all
+
+
+Product.all.each do |product|
+  Store.all.each do |store|
+    ProductAtStore.create! product: product, store: store
+    Source.all.each do |source|
+      ProductAtStoreFromSource.create! product: product, store: store, source: source
+    end
+  end
+end
+
+
+Product.all.each do |product|
+  Source.all.each do |source|
+    ProductFromSource.create product: product, source: source
+  end
+end

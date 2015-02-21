@@ -1,28 +1,26 @@
 <!-- Responsive panel example-->
-<div class="container-fluid">
-  <div class="row-fluid">
-    <div class="span2">
 
-<div class="list-group">
-<%= form_tag products_path, method: "get" do %>
-  <ul>
-    <% @products.each do |product| %>
-      <li>
-      <a href="<%= link_to product %>" class="list-group-item"><%= product.name %></a>
-      </li>
-    <% end %>
-  </ul>
-</div>
+<div class="row page-header">
+  <div class="col-sm-2 col-md-2">
+    <div class="list-group">
+      <% @products.each do |product| %>
 
-<div class="row">
-  <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">Product #<%= @product.id %></h3>
-      </div>
-      <div class="panel-body">
-        <div class="row">
-          <div class="col-md-12">
+      <%=link_to product.name, product_path(product.id), class: "list-group-item" %>
+      <% end %>
+    </div>
+  </div>
+
+
+  <div class="col-sm-10 col-md-10">
+
+    <div class="row">
+      <div class="col-md-5">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Product #<%= @product.id %></h3>
+          </div>
+          <div class="panel-body">
+
             <dl class="dl-horizontal">
               <dt>Name</dt>
               <dd><%= @product.name %></dd>
@@ -33,24 +31,43 @@
             </dl>
             <div class="btn-group btn-group-justified">
               <%= link_to products_url, :class => "btn btn-primary" do %>
-                <i class="fa fa-chevron-left"></i>
+              <i class="fa fa-chevron-left"></i>
               <% end %>
               <%= link_to edit_product_url(@product.id), :class => "btn btn-warning" do %>
-                <i class="fa fa-edit"></i>
+              <i class="fa fa-edit"></i>
               <% end %>
               <%= link_to product_url(@product.id), :method => "delete", :data => { :confirm => "Do you really want to delete this product?" }, :class => "btn btn-danger" do %>
-                <i class="fa fa-trash-o"></i>
+              <i class="fa fa-trash-o"></i>
               <% end %>
             </div>
           </div>
         </div>
       </div>
+      <div class="col-md-5">
+        <h2>Placeholder for recipe api</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-5">
+       <h2>Who makes local <%= @product.name %></h2>
+       <div class="list-group">
+      <% @product_from_sources.each do |product_from_source| %>
+      <%=link_to product_from_source.source.name, source_path(product_from_source.source.id), class: "list-group-item" %>
+      <% end %>
+      </div>
+      </div>
+      <div class="col-md-5">
+       <h2>Where you can buy local <%= @product.name %></h2>
+       <div class="list-group">
+      <% @product_at_stores.each do |product_at_store| %>
+      <%=link_to product_at_store.store.name, store_path(product_at_store.store.id), class: "list-group-item" %>
+      <% end %>
+      </div>
+      </div>
     </div>
   </div>
 </div>
-</div>
-</div>
-</div>
 
 
-<!-- End responsive panel example -->
+
+  <!-- End responsive panel example -->

@@ -4,7 +4,10 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @products = Product.all
     @product = Product.find(params[:id])
+    @product_from_sources = @product.product_from_sources
+    @product_at_stores = @product.product_at_stores
   end
 
   def new
